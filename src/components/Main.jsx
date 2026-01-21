@@ -1,7 +1,13 @@
+import CardArray from "./CardArray"
+
 const Main = () => {
-  return (
-    false
-  )
+    return (
+        <main>
+            <>
+                <CardArray />
+            </>
+        </main>
+    )
 }
 
 export default Main
