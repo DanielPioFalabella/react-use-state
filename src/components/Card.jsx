@@ -1,13 +1,19 @@
+import { useState } from "react";
+
 const Card = (props) => {
     // destracturing
-    const {id, title, description} = props
+    const { id, title, description } = props
 
-  return (
-    <div className="container" key={id}>
-        <button className="btn">{title}</button>
-        <p>{description}</p>
-     </div>
-  )
+    const [isOpen, setIsOpen] = useState(false)
+
+    return (
+        <>
+        <div key={id}>
+            <button className="btn" onClick={() => { setIsOpen(!isOpen); }}>{title}</button>
+            </div>{isOpen ? <p>{description}</p> : ""}<div>
+        </div>
+        </>
+    )
 }
 
 export default Card
