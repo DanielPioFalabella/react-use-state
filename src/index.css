@@ -45,3 +45,11 @@ main {
   flex-direction: column;
   max-width: 180px;
 }
+
+.description {
+  font-size: 1.3rem;
+  padding: 15px;
+  margin-top: 30px;
+  border: 2px solid gray;
+  border-radius: 7px;
+}

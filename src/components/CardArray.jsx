@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Card from "./Card";
 
 const CardArray = () => {
@@ -34,19 +35,28 @@ const CardArray = () => {
         }
     ];
 
+    const [isOpen, setIsOpen] = useState(null)
+
     return (
-        <div className="container">
-        {languages.map((language) => (
-            <div className="card">
-            <Card
-                id={language.id}
-                title={language.title}
-                description={language.description}
-            />
+        <>
+            <div className="container">
+                {languages.map((language) => (
+                    <div className="card">
+                        <Card
+                            id={language.id}
+                            title={language.title}
+                            description= {language.description}
+                            isOpen={isOpen}
+                            setIsOpen={setIsOpen}
+                        />
+                    </div>
+                ))}
             </div>
-        ))}
-        </div>
-        
+            {isOpen && (
+            <p className="description">{languages.find(language => language.id === isOpen).description}</p>
+            )}
+        </>
+
     )
 }
 
